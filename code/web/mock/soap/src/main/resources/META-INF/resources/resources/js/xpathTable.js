@@ -54,7 +54,7 @@ function addXpath() {
     var xpathSelected = row.insertCell(0);
     var xpathColumn = row.insertCell(1);
 
-    xpathSelected.innerHTML = "<div class=\"delete\" onclick=\"removeXpath(\'" + xpath + "')\" \>";
+    xpathSelected.innerHTML = "<div class=\"delete\" onclick=\"removeXpath(\'" + xpath.replace (new RegExp("'", 'g'), "\\'") + "')\" \>";
     xpathColumn.innerHTML = "<input name=\"xpathExpressions[" + insertIndex + "].expression\" value=\"" + xpath + "\" type=\"hidden\" \> " + xpath;
     alignXpathTableRowValues();
 }
